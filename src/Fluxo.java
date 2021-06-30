@@ -27,32 +27,26 @@ public class Fluxo {
 		     com metodo .printStackTrace(*/
 	    	ex.printStackTrace();
 	   }
-          
         System.out.println("Fim do main");
     }
-
+    
+    /* ---------------------------------------------------------------------------------*/   
     private static void metodo1() {
     	System.out.println("Ini do metodo1");
-    	   metodo2();
-      
-       System.out.println("Fim do metodo1");
+    	metodo2();
+        System.out.println("Fim do metodo1");
     }
-
+    
+    /* ---------------------------------------------------------------------------------*/   
     private static void metodo2() {
         System.out.println("Ini do metodo2");
-        for(int i = 1; i <= 5; i++) {
-            System.out.println(i);  
-            
-        	/*Embora divisão por zero não seja possivel, o codigo é complilado sem erro */
-            	//int p = i / 0;  
-            	
-
-            /*Crinado variavel do tipo conta sem instanciar
-             * objetivo gerar Exception NullPonter*/
-            	Conta m = null;
-            	m.sacar();
-            	
-        }
-        System.out.println("Fim do metodo2");
+        
+        /*------------------------------------------------------------------------------------
+          	trow = jogar na pilha, 
+          	Instanciando um objeto apartir da classe ArithmeticException
+         	passando mensagem de erro como parametro. 
+         */
+        throw new ArithmeticException("Erro ao executar ");
+        //System.out.println("Fim do metodo2");
      }    
  }	
