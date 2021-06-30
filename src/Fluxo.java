@@ -1,10 +1,10 @@
 public class Fluxo {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         System.out.println("Ini do main");
         
     	/* ---------------------------------------------------------------------------------    
-    		Exceções Java, trantando erro ArithmeticException 
+    		Exceções Java, trantando erro ArithmeticException
       		A instrução try permite definir um bloco de código a ser testado 
      		quanto a erros enquanto está sendo executado.
     	 */
@@ -34,21 +34,24 @@ public class Fluxo {
     }
     
     /* ---------------------------------------------------------------------------------*/   
-    private static void metodo1() {
+    private static void metodo1() throws MinhaExcecao{
     	System.out.println("Ini do metodo1");
     	metodo2();
         System.out.println("Fim do metodo1");
     }
     
-    /* ---------------------------------------------------------------------------------*/   
-    private static void metodo2() {
+    /* -------------------------------------------------------------------------------
+     	Exceções Checked são aquelas no qual você é obrigado a tratá-la, 
+     	seja com um bloco try-catch ou mesmo com um throws
+     * --------------------------------------------------------------------------------*/   
+    private static void metodo2() throws MinhaExcecao{
         System.out.println("Ini do metodo2");
         
         /*------------------------------------------------------------------------------------
           	trow = jogar na pilha, 
           	Instanciando um objeto apartir da classe MinhaExcecao
          */
-        throw new MinhaExcecao ("Erro");
+        throw new MinhaExcecao ("FATALErro");
         //System.out.println("Fim do metodo2");
      }    
  }	
