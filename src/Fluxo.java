@@ -3,24 +3,36 @@ public class Fluxo {
     public static void main(String[] args) {
         System.out.println("Ini do main");
         
-      //---------------------------------------------------------------------------------    
-        /*Exceções Java, trantando erro ArithmeticException 
-          A instrução try permite definir um bloco de código a ser testado 
-         	quanto a erros enquanto está sendo executado.
+        /* ---------------------------------------------------------------------------------    
+    		Exceções Java, trantando erro ArithmeticException 
+      		A instrução try permite definir um bloco de código a ser testado 
+     		quanto a erros enquanto está sendo executado.
         */
        try {
     	   metodo1();
-        /*A instrução catch permite definir um bloco de código a ser executado, 
- 		se ocorrer um erro no bloco try.*/
-	   } catch(ArithmeticException ex) {
-	    	System.out.println("ArithmeticException");
+    	   
+    	 /* ---------------------------------------------------------------------------------   
+         	A instrução catch permite definir um bloco de código a ser executado, 
+ 			se ocorrer um erro no bloco try.*/
+	   } catch(ArithmeticException | NullPointerException  ex) {
+		   
+		   /*--------------------------------------------------------------------------------
+		     Acessando msg de erro dentro do objeto ArithmeticException
+		     com metodo .getMessage()*/	
+		    String msg = ex.getMessage();
+		    
+	    	System.out.println("Exception " + msg);
+	    	/*-------------------------------------------------------------------------------
+	    	Acessando informação da pilha guradada dentro do objeto ArithmeticException
+		     com metodo .printStackTrace(*/
+	    	ex.printStackTrace();
 	   }
-       //---------------------------------------------------------------------------------     
+          
         System.out.println("Fim do main");
     }
 
     private static void metodo1() {
-        System.out.println("Ini do metodo1");
+    	System.out.println("Ini do metodo1");
     	   metodo2();
       
        System.out.println("Fim do metodo1");
@@ -32,8 +44,15 @@ public class Fluxo {
             System.out.println(i);  
             
         	/*Embora divisão por zero não seja possivel, o codigo é complilado sem erro */
-            	int p = i / 0;  
+            	//int p = i / 0;  
+            	
+
+            /*Crinado variavel do tipo conta sem instanciar
+             * objetivo gerar Exception NullPonter*/
+            	Conta m = null;
+            	m.sacar();
+            	
         }
         System.out.println("Fim do metodo2");
-    }    
-}	
+     }    
+ }	
