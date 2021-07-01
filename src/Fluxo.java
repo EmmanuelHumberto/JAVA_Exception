@@ -14,8 +14,10 @@ public class Fluxo {
     	  /*----------------------------------------------------------------------------------   
          	 A instrução catch permite definir um bloco de código a ser executado, 
  			 se ocorrer um erro no bloco try.
+ 			 
+ 			 Exception passado como parametro para catch, Captura qualquer exceção 
  		   */
-	   } catch(ArithmeticException | NullPointerException | MinhaExcecao ex) {
+	   } catch(Exception ex) {
 		   
 		   /*--------------------------------------------------------------------------------
 		     Acessando msg de erro dentro do objeto ArithmeticException
@@ -51,7 +53,7 @@ public class Fluxo {
           	trow = jogar na pilha, 
           	Instanciando um objeto apartir da classe MinhaExcecao
          */
-        throw new MinhaExcecao ("FATALErro");
+        throw new NullPointerException("FATALErro");
         //System.out.println("Fim do metodo2");
      }    
  }	

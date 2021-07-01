@@ -1,7 +1,7 @@
 
 public class Conta {
 
-	public void sacar() {
+	public void sacar() throws MinhaExcecao {
 	
 	}
 
